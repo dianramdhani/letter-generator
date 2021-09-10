@@ -58,7 +58,6 @@ export default {
     toggleForm();
     this.$watch(() => this.$store.state.template, toggleForm);
   },
-
   methods: {
     setJob() {
       this.$store.commit(SET_JOB, {

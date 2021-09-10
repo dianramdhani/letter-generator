@@ -1,1 +1,2 @@
 export const TEMPLATE_IS_VALID = 'TEMPLATE_IS_VALID';
+export const GET_LETTER = 'GET_LETTER';

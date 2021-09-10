@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import { SET_JOB, SET_TEMPLATE } from './mutation-types';
-import { TEMPLATE_IS_VALID } from './getter-types';
+import { GET_LETTER, TEMPLATE_IS_VALID } from './getter-types';
 
 const state = () => {
     return {
@@ -25,6 +25,13 @@ const mutations = {
 const getters = {
     [TEMPLATE_IS_VALID]({ template }) {
         return template.includes('<company>') && template.includes('<position>');
+    },
+
+    [GET_LETTER]({ template, job }) {
+        const { company, position } = job;
+        return template
+            .replace('<company>', company)
+            .replace('<position>', position);
     }
 };
 
