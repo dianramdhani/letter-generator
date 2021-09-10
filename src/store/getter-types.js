@@ -1,0 +1,1 @@
+export const TEMPLATE_IS_VALID = 'TEMPLATE_IS_VALID';
