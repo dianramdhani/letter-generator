@@ -45,21 +45,18 @@ export default {
     };
   },
   mounted() {
-    this.$watch(
-      () => this.$store.state.template,
-      () => {
-        this.templateIsSet = this.$store.getters[TEMPLATE_IS_VALID];
-        if (!this.templateIsSet) {
-          const form = this.$refs.formJob;
-          const inputs = form.getElementsByTagName("input");
-          inputs.forEach((input) => {
-            input.disabled = true;
-          });
-          const button = form.querySelector('button[type="submit"]');
-          button.disabled = true;
-        }
-      }
-    );
+    const toggleForm = () => {
+      this.templateIsSet = this.$store.getters[TEMPLATE_IS_VALID];
+      const form = this.$refs.formJob;
+      const inputs = form.getElementsByTagName("input");
+      inputs.forEach((input) => {
+        input.disabled = !this.templateIsSet;
+      });
+      const button = form.querySelector('button[type="submit"]');
+      button.disabled = !this.templateIsSet;
+    };
+    toggleForm();
+    this.$watch(() => this.$store.state.template, toggleForm);
   },
 
   methods: {

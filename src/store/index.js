@@ -14,7 +14,7 @@ const state = () => {
 
 const mutations = {
     [SET_TEMPLATE](state, payload) {
-        state.company = payload;
+        state.template = payload;
     },
 
     [SET_JOB](state, payload) {

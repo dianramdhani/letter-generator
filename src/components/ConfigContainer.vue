@@ -19,10 +19,15 @@
         aria-labelledby="flush-headingOne"
         data-bs-parent="#configContainer"
       >
-        <div class="accordion-body">
+        <form class="accordion-body">
           <div class="mb-3">
             <label for="template" class="form-label">Template</label>
-            <textarea class="form-control" id="template" rows="3"></textarea>
+            <textarea
+              class="form-control"
+              id="template"
+              rows="3"
+              v-model="template"
+            ></textarea>
             <div class="form-text">
               Add <span class="text-primary">&lt;company&gt;</span> for company
               name template.
@@ -31,15 +36,33 @@
               position template.
             </div>
           </div>
-          <button class="btn btn-primary">Set</button>
-        </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            @click.prevent="setTemplate"
+          >
+            Set
+          </button>
+        </form>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { SET_TEMPLATE } from "../store/mutation-types";
+
 export default {
   name: "ConfigContainer",
+  data() {
+    return {
+      template: "",
+    };
+  },
+  methods: {
+    setTemplate() {
+      this.$store.commit(SET_TEMPLATE, this.template);
+    },
+  },
 };
 </script>
