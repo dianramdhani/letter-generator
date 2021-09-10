@@ -17,7 +17,10 @@
       placeholder="PT. XYZ"
     />
   </div>
-  <button class="btn btn-primary">Generate</button>
+
+  <router-link to="/letter-result">
+    <button class="btn btn-primary">Generate</button>
+  </router-link>
 </template>
 
 <script>

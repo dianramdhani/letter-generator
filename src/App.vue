@@ -1,25 +1,18 @@
 <template>
   <card-layout>
-    <div class="card-body">
-      <form-job />
-      <letter-result />
-    </div>
+    <div class="card-body"><router-view></router-view></div>
     <config-container />
   </card-layout>
 </template>
 
 <script>
 import ConfigContainer from "./components/ConfigContainer.vue";
-import FormJob from "./components/FormJob.vue";
-import LetterResult from "./components/LetterResult.vue";
 import CardLayout from "./layouts/CardLayout.vue";
 
 export default {
   name: "App",
   components: {
     ConfigContainer,
-    FormJob,
-    LetterResult,
     CardLayout,
   },
 };

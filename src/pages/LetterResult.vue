@@ -5,7 +5,7 @@
   </div>
   <div class="alert alert-primary" role="alert">Copy success!</div>
   <button class="btn btn-primary mb-1">Copy</button>
-  <button class="btn btn-secondary">Back</button>
+  <router-link class="btn btn-secondary" to="/">Back</router-link>
 </template>
 
 <script>

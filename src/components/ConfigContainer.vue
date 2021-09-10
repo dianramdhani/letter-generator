@@ -20,15 +20,18 @@
         data-bs-parent="#configContainer"
       >
         <div class="accordion-body">
-          <label for="template" class="form-label">Template</label>
-          <textarea class="form-control" id="template" rows="3"></textarea>
-          <div class="form-text">
-            Add <span class="text-primary">&lt;company&gt;</span> for company
-            name template.
-            <br />
-            Add <span class="text-info">&lt;position&gt;</span> for job position
-            template.
+          <div class="mb-3">
+            <label for="template" class="form-label">Template</label>
+            <textarea class="form-control" id="template" rows="3"></textarea>
+            <div class="form-text">
+              Add <span class="text-primary">&lt;company&gt;</span> for company
+              name template.
+              <br />
+              Add <span class="text-info">&lt;position&gt;</span> for job
+              position template.
+            </div>
           </div>
+          <button class="btn btn-primary">Set</button>
         </div>
       </div>
     </div>
