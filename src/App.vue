@@ -1,26 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <card-layout>
+    <div class="card-body">
+      <form-job />
+      <letter-result />
+    </div>
+    <config-container />
+  </card-layout>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ConfigContainer from "./components/ConfigContainer.vue";
+import FormJob from "./components/FormJob.vue";
+import LetterResult from "./components/LetterResult.vue";
+import CardLayout from "./layouts/CardLayout.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    ConfigContainer,
+    FormJob,
+    LetterResult,
+    CardLayout,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.card {
+  max-width: 30rem;
+}
+
+.btn {
+  width: 100%;
+}
+
+small {
+  font-size: 0.8rem;
 }
 </style>

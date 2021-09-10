@@ -1,0 +1,15 @@
+<template>
+  <div class="mb-3">
+    <label for="template" class="form-label">Letter</label>
+    <textarea class="form-control" id="template" rows="3"></textarea>
+  </div>
+  <div class="alert alert-primary" role="alert">Copy success!</div>
+  <button class="btn btn-primary mb-1">Copy</button>
+  <button class="btn btn-secondary">Back</button>
+</template>
+
+<script>
+export default {
+  name: "LetterResult",
+};
+</script>
