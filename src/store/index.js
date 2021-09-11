@@ -37,8 +37,8 @@ const getters = {
     [GET_LETTER]({ template, job }) {
         const { company, position } = job;
         return template
-            .replace('<company>', company)
-            .replace('<position>', position);
+            .replace(/<company>/g, company)
+            .replace(/<position>/g, position);
     }
 };
 

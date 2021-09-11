@@ -6,7 +6,7 @@
     <div class="mb-3">
       <label for="company" class="form-label">Company Name</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="company"
         placeholder="PT. XYZ"
@@ -17,7 +17,7 @@
     <div class="mb-3">
       <label for="position" class="form-label">Job Position</label>
       <input
-        type="email"
+        type="text"
         class="form-control"
         id="position"
         placeholder="Front-end Developer"

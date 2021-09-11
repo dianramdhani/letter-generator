@@ -29,9 +29,13 @@ export default {
     };
   },
   mounted() {
-    if (this.$store.getters[TEMPLATE_IS_VALID]) {
-      this.letter = this.$store.getters[GET_LETTER];
-    }
+    const collectLetter = () => {
+      if (this.$store.getters[TEMPLATE_IS_VALID]) {
+        this.letter = this.$store.getters[GET_LETTER];
+      }
+    };
+    collectLetter();
+    this.$watch(() => this.$store.state.template, collectLetter);
   },
   methods: {
     copy() {
