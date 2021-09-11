@@ -19,7 +19,7 @@
         aria-labelledby="flush-headingOne"
         data-bs-parent="#configContainer"
       >
-        <form class="accordion-body">
+        <form class="accordion-body" @submit.prevent="setTemplate">
           <div class="mb-3">
             <label for="template" class="form-label">Template</label>
             <textarea
@@ -27,6 +27,7 @@
               id="template"
               rows="3"
               v-model="template"
+              required
             ></textarea>
             <div class="form-text">
               Add <span class="text-primary">&lt;company&gt;</span> for company
@@ -36,13 +37,7 @@
               position template.
             </div>
           </div>
-          <button
-            type="submit"
-            class="btn btn-primary"
-            @click.prevent="setTemplate"
-          >
-            Set
-          </button>
+          <button type="submit" class="btn btn-primary">Set</button>
         </form>
       </div>
     </div>
@@ -58,6 +53,13 @@ export default {
     return {
       template: "",
     };
+  },
+  mounted() {
+    this.template = this.$store.state.template;
+    this.$watch(
+      () => this.$store.state.template,
+      (template) => (this.template = template)
+    );
   },
   methods: {
     setTemplate() {

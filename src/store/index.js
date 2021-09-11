@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
-import { SET_JOB, SET_TEMPLATE } from './mutation-types';
+import { LOAD_STATE, SET_JOB, SET_TEMPLATE } from './mutation-types';
 import { GET_LETTER, TEMPLATE_IS_VALID } from './getter-types';
+import letter from '../api/letter';
 
 const state = () => {
     return {
@@ -15,11 +16,17 @@ const state = () => {
 const mutations = {
     [SET_TEMPLATE](state, payload) {
         state.template = payload;
+        letter.addTemplate(payload);
     },
 
     [SET_JOB](state, payload) {
         state.job = payload;
     },
+
+    [LOAD_STATE](state) {
+        letter.loadLastTemplate()
+            .then(template => state.template = template);
+    }
 };
 
 const getters = {
@@ -35,8 +42,4 @@ const getters = {
     }
 };
 
-const actions = {
-
-};
-
-export default createStore({ state, mutations, getters, actions });
+export default createStore({ state, mutations, getters });

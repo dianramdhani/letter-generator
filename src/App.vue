@@ -8,9 +8,13 @@
 <script>
 import ConfigContainer from "./components/ConfigContainer.vue";
 import CardLayout from "./layouts/CardLayout.vue";
+import { LOAD_STATE } from "./store/mutation-types";
 
 export default {
   name: "App",
+  beforeCreate() {
+    this.$store.commit(LOAD_STATE);
+  },
   components: {
     ConfigContainer,
     CardLayout,

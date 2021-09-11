@@ -2,7 +2,7 @@
   <div class="alert alert-warning" role="alert" v-if="!templateIsSet">
     Please set template before generate letter!
   </div>
-  <form ref="formJob">
+  <form ref="formJob" @submit.prevent="setJob">
     <div class="mb-3">
       <label for="company" class="form-label">Company Name</label>
       <input
@@ -25,9 +25,7 @@
         v-model="position"
       />
     </div>
-    <button type="submit" class="btn btn-primary" @click.prevent="setJob">
-      Generate
-    </button>
+    <button type="submit" class="btn btn-primary">Generate</button>
   </form>
 </template>
 
